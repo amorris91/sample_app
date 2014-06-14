@@ -14,8 +14,8 @@ describe "UserPages" do
   describe "signup page" do
     before { visit signup_path }
 
-    it { should have_content('Sign Up') }
-    it { should have_title(full_title('Sign Up')) }
+    it { should have_content('Sign up') }
+    it { should have_title(full_title('Sign up')) }
   end
 
   describe "signup" do
@@ -31,7 +31,7 @@ describe "UserPages" do
       describe "after submission" do
         before { click_button submit }
 
-        it { should have_title('Sign Up') }
+        it { should have_title('Sign up') }
         it { should have_content('error') }
       end
     end
