@@ -38,10 +38,7 @@ describe "UserPages" do
 
     describe "with valid information" do
       before do
-        fill_in "Name",         with: "Example User"
-        fill_in "Email",        with: "user@example.com"
-        fill_in "Password",     with: "foobar"
-        fill_in "Confirmation", with: "foobar"
+        valid_create("Example User", "user@example.com", "foobar")
       end
 
       it "should create a user" do
@@ -54,7 +51,7 @@ describe "UserPages" do
 
         it { should have_link('Sign out') }
         it { should have_title(user.name) }
-        it { should have_selector('div.alert.alert-success', text: 'Welcome') }
+        it { should have_success_message('Welcome') }
       end
     end
   end
